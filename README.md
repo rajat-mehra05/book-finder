@@ -4,12 +4,21 @@
 
 
 ### Features
+---
 
 - React : UI Framework
 - Axios : a promise-based HTTP Client 
 - react-reveal : high performance animation library for React
 
+
+### To-do
+---
+  
+  - Need to make it mobile responsiveness
+
+
 ### Set Up
+---
 
 Use the node package manager npm to set up the development enviroment.
 
@@ -18,7 +27,14 @@ Use the node package manager npm to set up the development enviroment.
    
   2. Start the development server :
      ```npm run start```
-     
-     
+ 
+ 
+ ### Contributing
+ ---
+ 
+ Pull requests are welcome. Please open an issue first to discuss what you would like to change.
+    
+    
  ### License
+ ---
  [MIT](https://choosealicense.com/licenses/mit/)
