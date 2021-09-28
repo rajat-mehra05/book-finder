@@ -78,7 +78,7 @@ h3 {
 
 .genre {
   float: right;
-  background: #ff0;
+  background: rgb(219, 68, 224);
   padding: 0px;
   padding-left: 10px;
   margin-right: -10px;
@@ -86,6 +86,7 @@ h3 {
 }
 .genre > i {
   font-size: 1.2rem;
+  padding: 0.7rem 0.5rem;
 }
 
 .books {
