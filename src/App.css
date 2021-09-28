@@ -65,6 +65,7 @@ button:hover {
 .stars > i {
   display: inline-block;
   margin: 5px;
+  color: rgb(228, 76, 21);
 }
 
 h2 {
