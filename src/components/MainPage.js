@@ -15,7 +15,7 @@ const MainPage = (props) => {
               publisher,
               publishedDate,
               industryIdentifiers,
-              imageLinks: { thumbnail },
+              imageLinks,
             },
           } = item;
 
@@ -26,8 +26,8 @@ const MainPage = (props) => {
                   <li key={index}>
                     <div className="book-info-left">
                       <img
-                        src={thumbnail ? thumbnail : "pic not found"}
-                        alt="pic"
+                        src={imageLinks ? imageLinks.thumbnail : "No-thumbnail"}
+                        alt="no-pic"
                         height="180px"
                         width="150px"
                       />
@@ -41,9 +41,13 @@ const MainPage = (props) => {
 
                       <div className="book-info-right">
                         <h2> {title} </h2>
-                        <span className="genre">
-                          <i className="fas fa-book">{categories}</i>
-                        </span>
+                        {categories ? (
+                          <span className="genre">
+                            <i className="fas fa-book">&nbsp;{categories}</i>
+                          </span>
+                        ) : (
+                          ""
+                        )}
                         <h3>by {authors}</h3>
                         <p className="details-info">
                           {publisher} <br />
