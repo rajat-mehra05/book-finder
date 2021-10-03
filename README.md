@@ -11,12 +11,6 @@
 - react-reveal : high performance animation library for React
 
 
-### To-do
----
-  
-  - Need to make it mobile responsiveness
-
-
 ### Set Up
 ---
 
