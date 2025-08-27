@@ -1,28 +1,31 @@
-import React, { useState } from "react";
+import React, { useCallback } from "react";
 import Header from "./components/Header";
 import MainPage from "./components/MainPage";
-import axios from "axios";
+import Spinner from "./components/Spinner";
+import { useBookSearch } from "./hooks/useBookSearch";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
+  const { books, loading, error, hasSearched, searchBooks } = useBookSearch();
 
-  let API_URL = `https://www.googleapis.com/books/v1/volumes`;
-
-  const fetchBooks = async (text) => {
-    const res = await axios.get(`${API_URL}?q=${text}`);
-    /* console.log(res.data); */
-    setBooks(res.data.items);
-  };
-
-  const search = (input) => {
-    fetchBooks(input);
-  };
+  const search = useCallback(
+    (input) => {
+      searchBooks(input);
+    },
+    [searchBooks]
+  );
 
   return (
     <>
       <div>
         <Header search={search} />
       </div>
+      {loading && <Spinner />}
+      {error && <div className="error">{error}</div>}
+      {!loading && !error && hasSearched && books.length === 0 && (
+        <div className="empty-state">
+          No books found. Try a different search term.
+        </div>
+      )}
       <MainPage items={books} />
     </>
   );
