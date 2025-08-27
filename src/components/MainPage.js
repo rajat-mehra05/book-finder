@@ -1,5 +1,5 @@
+import { motion } from "framer-motion";
 import React from "react";
-import Fade from "react-reveal/Fade";
 
 const MainPage = (props) => {
   return (
@@ -20,10 +20,15 @@ const MainPage = (props) => {
           } = item;
 
           return (
-            <Fade bottom>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <div className="book-container">
                 <ul>
-                  <li key={index}>
+                  <li>
                     <div className="book-info-left">
                       <img
                         src={imageLinks ? imageLinks.thumbnail : "No-thumbnail"}
@@ -67,7 +72,7 @@ const MainPage = (props) => {
                   </li>
                 </ul>
               </div>
-            </Fade>
+            </motion.div>
           );
         })}
       </div>
